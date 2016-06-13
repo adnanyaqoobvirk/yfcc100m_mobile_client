@@ -1,0 +1,19 @@
+<ion-view view-title="yfcc100m Browser">
+  <ion-content>
+      <form ng-submit="afterSelect()">
+        <div class="list">
+            <div class="item item-input-inset">
+              <label class="item item-input-wrapper">       
+                <input type="text" placeholder="Enter a tag" ng-model="formData.tag">
+              </label>
+              <button class="button" type="submit">Search</button>
+            </div>
+        </div>
+      </form>
+    <ion-list>
+      <ion-item ng-repeat="image in images" href="{{baseURL+image.download_url}}">
+        <img ng-src="{{baseURL+image.download_url}}">
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
